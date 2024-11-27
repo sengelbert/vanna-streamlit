@@ -9,7 +9,8 @@ from vanna_calls import (
     generate_followup_cached,
     should_generate_chart_cached,
     is_sql_valid_cached,
-    generate_summary_cached
+    generate_summary_cached,
+    train_vanna
 )
 
 avatar_url = "https://vanna.ai/img/vanna.svg"
@@ -28,6 +29,7 @@ st.sidebar.button("Reset", on_click=lambda: set_question(None), use_container_wi
 st.title("Vanna AI")
 # st.sidebar.write(st.session_state)
 
+train_vanna()
 
 def set_question(question):
     st.session_state["my_question"] = question
